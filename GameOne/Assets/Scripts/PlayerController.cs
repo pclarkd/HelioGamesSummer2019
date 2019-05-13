@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CharacterMover : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Hello Helio!");
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+}
