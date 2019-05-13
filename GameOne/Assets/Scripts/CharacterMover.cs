@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterMover : MonoBehaviour {
 
 	// Use this for initialization
@@ -13,4 +14,3 @@ public class CharacterMover : MonoBehaviour {
 	void Update () {
 		
 	}
-}
