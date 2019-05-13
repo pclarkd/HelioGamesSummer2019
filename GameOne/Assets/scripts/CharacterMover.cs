@@ -7,16 +7,7 @@ public class CharacterMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello Helio!");
-        bool dontKnowAnythingAboutCode = false;
-        if (dontKnowAnythingAboutCode == true)
-        {
-            //Just make a comment
-        }
-        else
-        {
-            //Write some script
-        }
+        //Anything you want
     }
 
     // Update is called once per frame
