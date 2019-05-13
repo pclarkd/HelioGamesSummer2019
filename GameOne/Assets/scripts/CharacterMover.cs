@@ -8,7 +8,6 @@ public class CharacterMover : MonoBehaviour
     void Start()
     {
         //Anything you want
-        Console.WriteLine("Hey there precious");
     }
 
     // Update is called once per frame
