@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: FirstModel.ma
-//Last modified: Wed, May 15, 2019 10:20:08 AM
+//Last modified: Wed, May 15, 2019 10:45:03 AM
 //Codeset: UTF-8
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -90,6 +90,19 @@ createNode mesh -n "pPlatonicShape1" -p "pPlatonic1";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
+createNode transform -n "pTorus1";
+	rename -uid "AEF43B48-7243-662F-166E-20BFCDE772F7";
+createNode mesh -n "pTorusShape1" -p "pTorus1";
+	rename -uid "CC174BCA-7545-7A12-FD80-57A53759BA05";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "50E36450-044E-C400-51F4-1E81E7E3BD78";
 	setAttr -s 2 ".lnk";
@@ -157,6 +170,9 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode polyPlatonic -n "polyPlatonic1";
 	rename -uid "A1D09520-3C4E-DD69-CDD9-F88C9664073C";
+createNode polyTorus -n "polyTorus1";
+	rename -uid "7B05CA19-3641-CB0F-7C44-A5A1967C8D58";
+	setAttr ".r" 5;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -175,6 +191,7 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -188,6 +205,7 @@ select -ne :hardwareRenderGlobals;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
 connectAttr "polyPlatonic1.output" "pPlatonicShape1.i";
+connectAttr "polyTorus1.out" "pTorusShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -196,4 +214,5 @@ connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pPlatonicShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of FirstModel.ma
