@@ -8,7 +8,7 @@ public class DebugObj : ScriptableObject
         Debug.Log(message);
     }
     
-    public void OnDebug(FloatData obj)
+    public void OnDebug(FloatDataObj obj)
     {
         Debug.Log(obj.Value);
     }
