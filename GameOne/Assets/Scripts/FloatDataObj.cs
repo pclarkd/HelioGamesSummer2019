@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-public class FloatData : ScriptableObject
+public class FloatDataObj : ScriptableObject
 {
     public float Value;
 
