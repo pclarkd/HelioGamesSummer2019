@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEngine.UI;
 using UnityEngine;
 [CreateAssetMenu]
 public class UpdateImageObj : ScriptableObject 
