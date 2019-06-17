@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Fire
-  - PowerUp
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,10 +15,10 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - MainShadow
-  - Ground
-  - Player
-  - Ammo
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
